@@ -225,8 +225,8 @@
   </div>
 
   <!-- 🎵 MUSIC -->
-  <audio id="song" loop>
-    <source src="song.mp3.mp3" type="audio/mp3">
+  <audio id="song" loop preload="auto">
+    <source src="song.mp3" type="audio/mp3">
   </audio>
 
   <section class="hero">
@@ -325,7 +325,7 @@
 
         let song = document.getElementById("song");
 
-        song.volume = 100;
+        song.volume = 1;
 
         song.play();
 
