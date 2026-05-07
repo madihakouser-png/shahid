@@ -225,8 +225,8 @@
   </div>
 
   <!-- 🎵 MUSIC -->
-  <audio id="song" loop preload="auto">
-    <source src="song.mpeg" type="audio/mpeg">
+  <audio id="song" loop>
+    <source src="./song.mpeg" type="audio/mpeg">
   </audio>
 
   <section class="hero">
@@ -315,32 +315,32 @@
 
     function checkCode(){
 
-      let enteredCode = document.getElementById("code").value;
+  let enteredCode =
+  document.getElementById("code").value;
 
-      if(enteredCode === secretCode){
+  if(enteredCode === secretCode){
 
-        document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("lockScreen")
+    .style.display = "none";
 
-        document.body.classList.remove("locked");
+    document.body.classList.remove("locked");
 
-        let song = document.getElementById("song");
+    let song =
+    document.getElementById("song");
 
-        song.volume = 50;
+    song.muted = false;
+    song.volume = 1;
 
-        song.play();
+    song.play();
 
-        document.addEventListener("click", function () {
-          song.play();
-        });
+    startHearts();
 
-        startHearts();
+  }
 
-      }
-
-      else{
-        alert("Wrong Secret Code 💔");
-      }
-    }
+  else{
+    alert("Wrong Secret Code 💔");
+  }
+}
 
     /* 💖 HEART EFFECT */
     function startHearts(){
