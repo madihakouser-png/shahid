@@ -1,4 +1,0 @@
-<!-- 🎵 MUSIC -->
-<audio id="song" loop>
-  <source src="song.mpeg" type="audio/mpeg">
-</audio>
