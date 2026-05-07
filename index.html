@@ -134,8 +134,8 @@
 
     /* 📸 ONLY PHOTO 2 WIDER */
     .portrait{
-      width:100% !important;
-      height:400px !important;
+      width:420px !important;
+      height:650px !important;
       object-fit:cover;
     }
 
@@ -224,10 +224,10 @@
 
   </div>
 
-  <!-- 🎵 MUSIC -->
-  <audio id="song" loop>
-    <source src="./song.mpeg" type="audio/mpeg">
-  </audio>
+  <!-- 🎥 HIDDEN VIDEO AUDIO -->
+  <video id="songVideo" loop style="display:none;">
+    <source src="song.mp4" type="video/mp4">
+  </video>
 
   <section class="hero">
 
@@ -315,32 +315,32 @@
 
     function checkCode(){
 
-  let enteredCode =
-  document.getElementById("code").value;
+      let enteredCode = document.getElementById("code").value;
 
-  if(enteredCode === secretCode){
+      if(enteredCode === secretCode){
 
-    document.getElementById("lockScreen")
-    .style.display = "none";
+        document.getElementById("lockScreen").style.display = "none";
 
-    document.body.classList.remove("locked");
+        document.body.classList.remove("locked");
 
-    let song =
-    document.getElementById("song");
+        /* 🎥 PLAY HIDDEN VIDEO AUDIO */
+        let video = document.getElementById("songVideo");
 
-    song.muted = false;
-    song.volume = 1;
+        video.volume = 1;
+        video.play();
 
-    song.play();
+        document.addEventListener("click", function () {
+          video.play();
+        });
 
-    startHearts();
+        startHearts();
 
-  }
+      }
 
-  else{
-    alert("Wrong Secret Code 💔");
-  }
-}
+      else{
+        alert("Wrong Secret Code 💔");
+      }
+    }
 
     /* 💖 HEART EFFECT */
     function startHearts(){
