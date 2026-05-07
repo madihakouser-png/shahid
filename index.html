@@ -120,6 +120,7 @@
       gap: 20px;
       max-width: 1100px;
       margin: auto;
+      align-items:start;
     }
 
     .photos img {
@@ -131,9 +132,11 @@
       transition:0.4s;
     }
 
-    /* 📸 ONLY PHOTO 2 BIGGER */
+    /* 📸 ONLY PHOTO 2 WIDER */
     .portrait{
       height:700px !important;
+      width:120% !important;
+      object-fit:cover;
     }
 
     .photos img:hover{
