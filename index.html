@@ -225,9 +225,9 @@
   </div>
 
   <!-- 🎵 MUSIC -->
-  <audio id="song" loop>
-    <source src="song.mpeg" type="audio/mpeg">
-  </audio>
+ <audio id="song" loop controls style="display:none;">
+  <source src="song.mpeg" type="audio/mpeg">
+</audio>
 
   <section class="hero">
 
@@ -325,13 +325,19 @@
 
         let song = document.getElementById("song");
 
-        song.play().catch(() => {
-          console.log("Autoplay blocked");
-        });
+       song.volume = 1;
 
-        startHearts();
+let playPromise = song.play();
 
-      }
+if (playPromise !== undefined) {
+  playPromise
+    .then(() => {
+      console.log("Music playing");
+    })
+    .catch(() => {
+      alert("Tap anywhere after unlock to start music 🎵");
+    });
+}
 
       else{
         alert("Wrong Secret Code 💔");
