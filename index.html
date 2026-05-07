@@ -134,8 +134,8 @@
 
     /* 📸 ONLY PHOTO 2 WIDER */
     .portrait{
-      height:400px !important;
-      width:100% !important;
+      width:420px !important;
+      height:650px !important;
       object-fit:cover;
     }
 
@@ -225,9 +225,9 @@
   </div>
 
   <!-- 🎵 MUSIC -->
- <audio id="song" loop controls style="display:none;">
-  <source src="song.mpeg" type="audio/mpeg">
-</audio>
+  <audio id="song" loop controls style="display:none;">
+    <source src="song.mpeg" type="audio/mpeg">
+  </audio>
 
   <section class="hero">
 
@@ -325,19 +325,23 @@
 
         let song = document.getElementById("song");
 
-       song.volume = 1;
+        song.volume = 1;
 
-let playPromise = song.play();
+        let playPromise = song.play();
 
-if (playPromise !== undefined) {
-  playPromise
-    .then(() => {
-      console.log("Music playing");
-    })
-    .catch(() => {
-      alert("Tap anywhere after unlock to start music 🎵");
-    });
-}
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Music playing");
+            })
+            .catch(() => {
+              alert("Tap anywhere after unlock to start music 🎵");
+            });
+        }
+
+        startHearts();
+
+      }
 
       else{
         alert("Wrong Secret Code 💔");
