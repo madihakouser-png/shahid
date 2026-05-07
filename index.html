@@ -224,10 +224,10 @@
 
   </div>
 
-  <!-- 🎥 HIDDEN VIDEO AUDIO -->
-  <video id="songVideo" loop style="display:none;">
-    <source src="song.mp4" type="video/mp4">
-  </video>
+  <!-- 🎵 MUSIC -->
+  <audio id="song" loop>
+    <source src="song.mp3.mp3" type="audio/mp3">
+  </audio>
 
   <section class="hero">
 
@@ -323,14 +323,14 @@
 
         document.body.classList.remove("locked");
 
-        /* 🎥 PLAY HIDDEN VIDEO AUDIO */
-        let video = document.getElementById("songVideo");
+        let song = document.getElementById("song");
 
-        video.volume = 1;
-        video.play();
+        song.volume = 1;
+
+        song.play();
 
         document.addEventListener("click", function () {
-          video.play();
+          song.play();
         });
 
         startHearts();
