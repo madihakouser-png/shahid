@@ -225,7 +225,7 @@
   </div>
 
   <!-- 🎵 MUSIC -->
-  <audio id="song" loop controls style="display:none;">
+  <audio id="song" loop preload="auto">
     <source src="song.mpeg" type="audio/mpeg">
   </audio>
 
@@ -327,17 +327,11 @@
 
         song.volume = 1;
 
-        let playPromise = song.play();
+        song.play();
 
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log("Music playing");
-            })
-            .catch(() => {
-              alert("Tap anywhere after unlock to start music 🎵");
-            });
-        }
+        document.addEventListener("click", function () {
+          song.play();
+        });
 
         startHearts();
 
